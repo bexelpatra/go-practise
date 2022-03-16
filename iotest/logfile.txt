@@ -1,0 +1,12 @@
+Info : 2022/02/22 16:24:53 hello_test.go:25: test
+Info : 2022/02/22 16:24:53 hello_test.go:27: End
+Info : 2022/02/22 16:25:05 hello_test.go:25: test
+Info : 2022/02/22 16:25:05 hello_test.go:27: End
+Info : 2022/02/22 17:00:34 ttest_test.go:22: test
+Info : 2022/02/22 17:00:34 ttest_test.go:24: End
+Info : 2022/02/22 17:01:52 ttest_test.go:22: test
+Info : 2022/02/22 17:01:53 ttest_test.go:24: End
+Info : 2022/03/15 09:17:11 ttest_test.go:22: test
+Info : 2022/03/15 09:17:11 ttest_test.go:24: End
+Info : 2022/03/15 09:17:29 ttest_test.go:22: test
+Info : 2022/03/15 09:17:29 ttest_test.go:24: End
