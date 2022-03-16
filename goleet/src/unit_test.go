@@ -27,3 +27,7 @@ func Test_slice(t *testing.T) {
 	fmt.Println(q)
 
 }
+
+func Test_mapset(t *testing.T) {
+
+}
