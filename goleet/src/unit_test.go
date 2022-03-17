@@ -5,6 +5,8 @@ import (
 	"strconv"
 	"testing"
 	"unsafe"
+
+	"example.go/goleet/util"
 )
 
 func Test_strings(t *testing.T) {
@@ -82,4 +84,12 @@ func Test_emptyStructure(t *testing.T) {
 	fmt.Println(xx == "")
 	fmt.Println(unsafe.Sizeof(xx))
 	fmt.Println(n["c"] == struct{}{})
+}
+
+func Test_se(t *testing.T) {
+	s := util.NewSet()
+	s.Add("a")
+
+	s.Remove("a")
+	fmt.Println(s.Contains("a"))
 }
