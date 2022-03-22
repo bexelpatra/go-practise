@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
 	"os"
 	"reflect"
@@ -75,6 +76,19 @@ func Test_pointer(t *testing.T) {
 	fmt.Println(p1)
 }
 
+func TestPointerSlice(t *testing.T) {
+	s := SSS{1, 2, 3, 4, 5, 6, 7, 8}
+	s.Pop()
+	s.Pop()
+	s.Pop()
+	fmt.Println(s)
+}
+func (s *SSS) Pop() {
+	*s = (*s)[1:]
+}
+
+type SSS []int
+
 type Person struct {
 	Name string
 	Age  int
@@ -90,4 +104,13 @@ func (p Person) addAge2(age int) *Person {
 	fmt.Println(&p, p)
 	p.Age += age
 	return &p
+}
+
+func Test_Fscan(t *testing.T) {
+	r := bufio.NewReader(os.Stdin)
+	var x int
+	var y int
+	fmt.Fscanln(r, &x, &y)
+
+	fmt.Println(x, y)
 }
