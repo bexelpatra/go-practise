@@ -121,3 +121,20 @@ func Test_Casting(t *testing.T) {
 	// a = "123"
 	fmt.Println(math.Pow(2, 31))
 }
+
+func Test_For(t *testing.T) {
+	slice := []int{1, 2, 3, 4}
+
+	for i, _ := range slice {
+		slice[i] += 1
+	}
+
+	fmt.Println(slice)
+
+	a := 140
+	b := strconv.Itoa(a)
+
+	for i := 0; i < len(b)-1; i++ {
+		b[i] - b[i+1]
+	}
+}

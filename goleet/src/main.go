@@ -12,6 +12,11 @@ func main() {
 	// baek.Baek10828()
 	// baek.Baek9012()
 	// baek.Baek11047()
-	baek.Baek1931()
+	// baek.Baek1931()
+	// baek.Baek4673()
+	for i := 0; i < 5; i++ {
+
+		baek.Baek1065()
+	}
 
 }
