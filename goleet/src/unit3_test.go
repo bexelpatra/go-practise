@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"math"
 	"os"
 	"reflect"
 	"strconv"
@@ -113,4 +114,10 @@ func Test_Fscan(t *testing.T) {
 	fmt.Fscanln(r, &x, &y)
 
 	fmt.Println(x, y)
+}
+
+func Test_Casting(t *testing.T) {
+	// var a string
+	// a = "123"
+	fmt.Println(math.Pow(2, 31))
 }

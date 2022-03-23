@@ -9,6 +9,9 @@ func main() {
 	// baek.Baek2606_2()
 	// baek.Baek1012()
 	// baek.Baek1717()
-	baek.Baek10828()
+	// baek.Baek10828()
+	// baek.Baek9012()
+	// baek.Baek11047()
+	baek.Baek1931()
 
 }
