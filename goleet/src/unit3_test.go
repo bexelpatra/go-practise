@@ -135,6 +135,10 @@ func Test_For(t *testing.T) {
 	b := strconv.Itoa(a)
 
 	for i := 0; i < len(b)-1; i++ {
-		b[i] - b[i+1]
+
 	}
+}
+
+func Test_makingslice(t *testing.T) {
+
 }

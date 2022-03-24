@@ -1,8 +1,6 @@
 package main
 
-import (
-	"example.go/goleet/baek"
-)
+import "example.go/goleet/baek"
 
 func main() {
 	// baek.Baek2606()
@@ -14,9 +12,7 @@ func main() {
 	// baek.Baek11047()
 	// baek.Baek1931()
 	// baek.Baek4673()
-	for i := 0; i < 5; i++ {
-
-		baek.Baek1065()
-	}
+	// baek.Baek1065()
+	baek.Baek7576()
 
 }
