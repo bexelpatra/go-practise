@@ -72,23 +72,38 @@ func min(a, b int) int {
 	return b
 }
 
-func Baek11697_2() {
+func Baek1697_2() {
 	r := bufio.NewReader(os.Stdin)
 
 	var N, target int
 	fmt.Fscanln(r, &N, &target)
 
-	if N > target {
-		N, target = target, N
-	}
 	lines := make([]int, 100000+1)
-	if N > 0 {
-		lines[N-1] = 1
-	}
-	lines[N] = 0
-	lines[N+1] = 1
-	lines[N*2] = 1
-	for {
+	lines[N] = 1
 
+	q := make([]int, 0)
+	q = append(q, N)
+
+	for len(q) > 0 {
+		now := q[0]
+		q = q[1:]
+
+		if now == target {
+			fmt.Println(lines[target] - 1)
+			return
+		}
+		if now-1 >= 0 && lines[now-1] == 0 {
+			lines[now-1] = lines[now] + 1
+			q = append(q, now-1)
+		}
+		if now+1 <= 100_000 && lines[now+1] == 0 {
+			lines[now+1] = lines[now] + 1
+			q = append(q, now+1)
+		}
+		if now*2 <= 100_000 && lines[now*2] == 0 {
+			lines[now*2] = lines[now] + 1
+			q = append(q, now*2)
+		}
 	}
+
 }

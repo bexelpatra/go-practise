@@ -140,5 +140,5 @@ func Test_For(t *testing.T) {
 }
 
 func Test_makingslice(t *testing.T) {
-
+	fmt.Println("aaa" + "bbb")
 }

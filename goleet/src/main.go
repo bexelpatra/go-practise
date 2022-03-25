@@ -14,6 +14,10 @@ func main() {
 	// baek.Baek4673()
 	// baek.Baek1065()
 	// baek.Baek7576()
-	baek.Baek1697_2()
+	// baek.Baek1697_2()
+	// baek.Baek1026()
+	// baek.Baek2798()
+
+	baek.Baek1541()
 
 }
