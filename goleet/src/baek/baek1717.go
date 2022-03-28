@@ -12,6 +12,7 @@ const (
 )
 
 func Baek1717() {
+	// 실패
 	r := bufio.NewReader(os.Stdin)
 	w := bufio.NewWriter(os.Stdout)
 

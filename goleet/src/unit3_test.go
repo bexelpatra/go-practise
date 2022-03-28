@@ -141,4 +141,9 @@ func Test_For(t *testing.T) {
 
 func Test_makingslice(t *testing.T) {
 	fmt.Println("aaa" + "bbb")
+
+	// for _, num := range strconv.Itoa(10000) {
+	// 	fmt.Println(int(num - '0'))
+	// }
+
 }
