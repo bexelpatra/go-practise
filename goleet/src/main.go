@@ -21,6 +21,9 @@ func main() {
 	// baek.Baek2217()
 	// baek.Baek5585()
 	// baek.Baek2231()
+	// baek.Baek11724()
+	// baek.Baek8958()
 
-	baek.Baek11724()
+	// baek.Baek1152_3()
+	baek.BaekTest()
 }
