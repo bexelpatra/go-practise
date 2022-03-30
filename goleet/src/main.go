@@ -25,5 +25,6 @@ func main() {
 	// baek.Baek8958()
 
 	// baek.Baek1152_3()
-	baek.BaekTest()
+	baek.Baek1920_3()
+
 }

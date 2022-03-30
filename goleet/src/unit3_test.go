@@ -2,10 +2,12 @@ package main
 
 import (
 	"bufio"
+	"encoding/json"
 	"fmt"
 	"math"
 	"os"
 	"reflect"
+	"sort"
 	"strconv"
 	"strings"
 	"testing"
@@ -166,8 +168,40 @@ func Test_ReadLine(t *testing.T) {
 		var temp []byte
 		temp, prefix, _ = r.ReadLine()
 		input = append(input, temp...)
+		fmt.Println(len(temp))
 	}
 
 	fmt.Println(len(input))
 
+}
+
+func Test_BinarySearch(t *testing.T) {
+	a := []int{1, 3, 6, 10, 15, 21, 28, 36, 45, 55}
+	x := 5
+
+	i := sort.Search(len(a), func(i int) bool { return a[i] >= x })
+	fmt.Println(i)
+	if i < len(a) && a[i] == x {
+		fmt.Printf("found %d at index %d in %v\n", x, i, a)
+	} else {
+		fmt.Printf("%d not found in %v\n", x, a)
+	}
+}
+
+func Test_te(t *testing.T) {
+	fmt.Println('Y', 'N')
+	b := []byte("{\"X\":1,\"Y\":2}")
+	p := Point{2, 5}
+	p2 := Point{}
+	jsonTest, _ := json.Marshal(p)
+	fmt.Println(json.Unmarshal(b, &p))
+	json.Unmarshal(jsonTest, &p2)
+
+	fmt.Println(p)
+	fmt.Println(p2)
+}
+
+type Point struct {
+	X int
+	Y int
 }
