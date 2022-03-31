@@ -201,6 +201,11 @@ func Test_te(t *testing.T) {
 	fmt.Println(p2)
 }
 
+func Test_Boolean(t *testing.T) {
+	list := []int{1}
+	fmt.Println(list[:len(list)-1])
+}
+
 type Point struct {
 	X int
 	Y int
