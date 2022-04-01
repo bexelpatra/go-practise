@@ -7,28 +7,54 @@ import (
 )
 
 func Baek1158() {
+	// 길이가 길수록 시간이 오래 걸린다.
+	// 리스트에서 내용을 제거하지 않고있기때문
 	r := bufio.NewReader(os.Stdin)
 	w := bufio.NewWriter(os.Stdout)
 	defer w.Flush()
 	var n, k int
 	fmt.Fscanln(r, &n, &k)
-	circle := make([]int, n+1)
-	for i := range circle {
+	circle := make([]int, n)
+	answer := make([]int, 0)
+	for i := 0; i < n; i++ {
 		circle[i] = i + 1
 	}
 	now := 0
-	for len(circle) > 1 {
-		now += k
-		seq := now % (len(circle) + 1)
-		fmt.Println(out(&circle, seq))
+	next := -1
+	for len(answer) < n {
+		for now < k {
+			next = (next + 1) % n
+			if circle[next] != 0 {
+				now += 1
+			}
+		}
+		answer = append(answer, circle[next])
+		circle[next] = 0
+		now = 0
 	}
+	fmt.Fprintf(w, "<")
+	for i := range circle {
+
+		fmt.Fprint(w, answer[i])
+		if i == len(circle)-1 {
+			break
+		}
+		fmt.Fprint(w, ", ")
+	}
+	fmt.Fprintf(w, ">")
 
 }
-func out(list *[]int, idx int) int {
-	exclude := (*list)[idx]
-	var temp []int
-	temp = (*list)[:idx]
-	temp = append(temp, (*list)[idx+1:]...)
-	*list = temp
-	return exclude
+
+func Baek1158_2() {
+	r := bufio.NewReader(os.Stdin)
+	w := bufio.NewWriter(os.Stdout)
+	defer w.Flush()
+	var n, k int
+	fmt.Fscanln(r, &n, &k)
+	circle := make([]int, n)
+	answer := make([]int, 0)
+	for i := 0; i < n; i++ {
+		circle[i] = i + 1
+	}
+
 }
