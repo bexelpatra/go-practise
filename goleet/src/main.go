@@ -28,6 +28,6 @@ func main() {
 
 	// baek.Baek1152_3()
 	// baek.Baek_Sample_1()
-	baek.Baek1158()
+	baek.Baek1158_2()
 
 }

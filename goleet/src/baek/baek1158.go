@@ -51,10 +51,21 @@ func Baek1158_2() {
 	defer w.Flush()
 	var n, k int
 	fmt.Fscanln(r, &n, &k)
-	circle := make([]int, n)
-	answer := make([]int, 0)
+	circle := make([]int, n, n+1)
+
 	for i := 0; i < n; i++ {
 		circle[i] = i + 1
 	}
+	cnt := 0
+	for len(circle) > 1 {
+		circle = append(circle, circle[0])
+		circle = circle[1:]
+		cnt += 1
+		if cnt == k {
+			circle = circle[1:]
+			fmt.Fprintf(w, "%d, ", circle[0])
+		}
+	}
+	fmt.Fprintf(w, "%d>", circle[0])
 
 }
