@@ -16,12 +16,20 @@ func Baek1181() {
 	var n int
 	r.Scan()
 	n, _ = strconv.Atoi(r.Text())
-	list := SortBy2{}
+	// list := SortBy2{}
+	list := make([]string, 0)
 	for i := 0; i < n; i++ {
 		r.Scan()
 		list = append(list, r.Text())
 	}
-	sort.Sort(list)
+	// sort.Sort(list)
+	sort.Slice(list, func(i, j int) bool {
+		if len(list[i]) == len(list[j]) {
+			return strings.Compare(list[i], list[j]) < 0
+		} else {
+			return len(list[i]) < len(list[j])
+		}
+	})
 
 	fmt.Fprintln(w, list[0])
 	for i := 1; i < len(list); i++ {
@@ -32,14 +40,14 @@ func Baek1181() {
 
 }
 
-type SortBy2 []string
+// type SortBy2 []string
 
-func (a SortBy2) Len() int      { return len(a) }
-func (a SortBy2) Swap(i, j int) { a[i], a[j] = a[j], a[i] }
-func (a SortBy2) Less(i, j int) bool {
-	if len(a[i]) == len(a[j]) {
-		return strings.Compare(a[i], a[j]) < 0
-	} else {
-		return len(a[i]) < len(a[j])
-	}
-}
+// func (a SortBy2) Len() int      { return len(a) }
+// func (a SortBy2) Swap(i, j int) { a[i], a[j] = a[j], a[i] }
+// func (a SortBy2) Less(i, j int) bool {
+// 	if len(a[i]) == len(a[j]) {
+// 		return strings.Compare(a[i], a[j]) < 0
+// 	} else {
+// 		return len(a[i]) < len(a[j])
+// 	}
+// }
