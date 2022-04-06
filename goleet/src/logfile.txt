@@ -37,3 +37,29 @@
 2022-03-18 10:44:45.8393291 +0900 KST m=+0.186891901 17
 2022-03-18 10:44:45.8408463 +0900 KST m=+0.188409101 18
 2022-03-18 10:44:45.8423292 +0900 KST m=+0.189892001 19
+2022/04/06 10:17:00 work start
+2022/04/06 10:17:00 asdf tomboy
+2022/04/06 10:17:00 asdf tomboy
+2022/04/06 10:17:00 asdf tomboy
+2022/04/06 10:17:00 asdf tomboy
+2022/04/06 10:17:00 asdf tomboy
+2022/04/06 10:17:00 asdf tomboy
+2022/04/06 10:17:00 asdf tomboy
+2022/04/06 10:17:00 asdf tomboy
+2022/04/06 10:17:00 asdf tomboy
+2022/04/06 10:17:00 asdf tomboy
+2022/04/06 10:17:00 asdf tomboy
+2022/04/06 10:17:00 End of Program
+INFO: 2022/04/06 10:24:48 unit4_test.go:145: work start
+INFO: 2022/04/06 10:24:48 unit4_test.go:146: asdf tomboy
+INFO: 2022/04/06 10:24:48 unit4_test.go:147: asdf tomboy
+INFO: 2022/04/06 10:24:48 unit4_test.go:148: asdf tomboy
+INFO: 2022/04/06 10:24:48 unit4_test.go:149: asdf tomboy
+INFO: 2022/04/06 10:24:48 unit4_test.go:150: asdf tomboy
+INFO: 2022/04/06 10:24:48 unit4_test.go:151: asdf tomboy
+INFO: 2022/04/06 10:24:48 unit4_test.go:152: asdf tomboy
+INFO: 2022/04/06 10:24:48 unit4_test.go:153: asdf tomboy
+INFO: 2022/04/06 10:24:48 unit4_test.go:154: asdf tomboy
+INFO: 2022/04/06 10:24:48 unit4_test.go:155: asdf tomboy
+INFO: 2022/04/06 10:24:48 unit4_test.go:156: asdf tomboy
+INFO: 2022/04/06 10:24:48 unit4_test.go:157: End of Program

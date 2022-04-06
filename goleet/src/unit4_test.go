@@ -129,3 +129,23 @@ func sample_defer() string {
 	}()
 	return str
 }
+
+func Test_logging(t *testing.T) {
+	fpLog, err := os.OpenFile("logfile.txt", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
+	if err != nil {
+		panic(err)
+	}
+	defer fpLog.Close()
+
+	// 표준로거를 파일로그로 변경
+	log.SetOutput(fpLog)
+	log.SetFlags(log.Ldate | log.Ltime | log.Lshortfile)
+	log.SetPrefix("INFO: ")
+
+	log.Println("End of Program")
+}
+
+func Test_Trim(t *testing.T) {
+	str := "abc:123;def:456;"
+	fmt.Println(strings.TrimSuffix(str, ";"))
+}
