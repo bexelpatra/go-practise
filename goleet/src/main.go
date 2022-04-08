@@ -1,5 +1,10 @@
 package main
 
+import (
+	"fmt"
+	"os"
+)
+
 func main() {
 	// baek.Baek2606()
 	// baek.Baek2606_2()
@@ -31,6 +36,44 @@ func main() {
 	// baek.Baek11650()
 	// baek.Baek2309()
 	// baek.Baek9465()
-	// testing.Do()
+	// my.Do()
 
+	gogo()
+
+	fmt.Println("recovered")
+
+}
+
+func gogo() {
+	defer func() {
+		r := recover()
+		fmt.Println("00000")
+		if r != nil {
+			fmt.Println("error occured", r)
+		}
+	}()
+	defer func() {
+		r := recover()
+		fmt.Println(11111)
+		if r != nil {
+			fmt.Println("error occured", r)
+		}
+	}()
+	defer func() {
+
+		fmt.Println(2222222)
+
+	}()
+	fi, err := os.OpenFile("d:/dddd", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
+	if err != nil {
+		panic(err)
+	}
+	defer func() {
+		r := recover()
+		fmt.Println(3333333)
+		if r != nil {
+			fmt.Println("error occured", r)
+		}
+	}()
+	fi.Close()
 }

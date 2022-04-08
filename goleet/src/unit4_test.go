@@ -131,21 +131,29 @@ func sample_defer() string {
 }
 
 func Test_logging(t *testing.T) {
-	fpLog, err := os.OpenFile("logfile.txt", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
+	fpLog, err := os.OpenFile("C:/c8/logfile.txt", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
+
 	if err != nil {
 		panic(err)
 	}
+
 	defer fpLog.Close()
+	defer func() {
+		if r := recover(); r != nil {
+			fmt.Println("recovery")
+		}
+	}()
 
 	// 표준로거를 파일로그로 변경
-	log.SetOutput(fpLog)
+	// log.SetOutput(fpLog)
 	log.SetFlags(log.Ldate | log.Ltime | log.Lshortfile)
 	log.SetPrefix("INFO: ")
-
+	log.Println("gogogogogo")
 	log.Println("End of Program")
 }
 
 func Test_Trim(t *testing.T) {
 	str := "abc:123;def:456;"
 	fmt.Println(strings.TrimSuffix(str, ";"))
+
 }
