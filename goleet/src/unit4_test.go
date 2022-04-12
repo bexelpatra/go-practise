@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"sort"
 	"strings"
 	"testing"
 	"time"
@@ -155,5 +156,55 @@ func Test_logging(t *testing.T) {
 func Test_Trim(t *testing.T) {
 	str := "abc:123;def:456;"
 	fmt.Println(strings.TrimSuffix(str, ";"))
+	fmt.Println(string(rune(352)))
+
+	fmt.Printf("\n\n\n")
+	fmt.Println("d")
+
+	fmt.Println("20221010" < "")
+}
+
+func Test_Parse(t *testing.T) {
+	now := "20220401"
+	compare1 := "20220402"
+	compare2 := "20220331"
+
+	fmt.Println(now > compare1)
+	fmt.Println(now > compare2)
+	fmt.Println(now == compare1)
+	fmt.Println(now == compare2)
+
+	list := []string{"v", "c", "t"}
+
+	sort.Slice(list, func(i, j int) bool {
+		return list[i] < list[j]
+	})
+
+	fmt.Println(list)
+
+	fmt.Println(calc(10, 1))
+	fmt.Println(calc(1, 2))
+	fmt.Println(calc(5, 100))
+	fmt.Println(calc(20, 14))
+	fmt.Println(calc(10, 10))
+}
+
+func calc(a, b int) (int, int) {
+	if a > b {
+		return a - b, 0
+	} else {
+		return 0, b - a
+	}
+
+}
+
+func Test_PointingList(t *testing.T) {
+	list := []int{1, 2, 3, 4, 5, 6, 7, 8, 9}
+
+	for i, val := range list {
+		list[i] = val + 1
+	}
+
+	fmt.Println(list)
 
 }
