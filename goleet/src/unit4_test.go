@@ -208,3 +208,27 @@ func Test_PointingList(t *testing.T) {
 	fmt.Println(list)
 
 }
+
+func Test_PrintFormat(t *testing.T) {
+	a := A{1, 2, 3, "aaaa"}
+
+	myA := map[string]interface{}{}
+
+	data, _ := json.Marshal(a)
+	json.Unmarshal(data, &myA)
+	fmt.Println(myA)
+	for k, v := range myA {
+		fmt.Println(k, ":", v)
+	}
+
+	fmt.Println("20220202" < "")
+	fmt.Println("20220202" > "")
+
+}
+
+type A struct {
+	A int
+	B int
+	C int
+	D string
+}

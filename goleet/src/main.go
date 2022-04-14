@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 	"os"
+
+	"example.go/goleet/baek"
 )
 
 func main() {
@@ -37,10 +39,8 @@ func main() {
 	// baek.Baek2309()
 	// baek.Baek9465()
 	// my.Do()
-
-	gogo()
-
-	fmt.Println("recovered")
+	// baek.Baek2579()
+	baek.Baek1003()
 
 }
 
