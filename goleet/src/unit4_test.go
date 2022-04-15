@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"reflect"
 	"sort"
 	"strings"
 	"testing"
@@ -210,25 +211,49 @@ func Test_PointingList(t *testing.T) {
 }
 
 func Test_PrintFormat(t *testing.T) {
-	a := A{1, 2, 3, "aaaa"}
-
+	a := A{"1", "2", "3", "aaaa"}
+	strList := []string{"4", "5", "6", "newAz"}
+	ayo := A{}
 	myA := map[string]interface{}{}
 
 	data, _ := json.Marshal(a)
 	json.Unmarshal(data, &myA)
 	fmt.Println(myA)
-	for k, v := range myA {
-		fmt.Println(k, ":", v)
+
+	s := reflect.ValueOf(&ayo).Elem()
+	for i := range strList {
+		f := s.Field(i)
+		f.SetString(strList[i])
+		fmt.Println(f.Elem())
 	}
 
-	fmt.Println("20220202" < "")
-	fmt.Println("20220202" > "")
-
+	fmt.Println(ayo)
 }
 
 type A struct {
-	A int
-	B int
-	C int
+	A string
+	B string
+	C string
 	D string
+}
+
+func Test_SplitStr(t *testing.T) {
+	str := ""
+	str1 := "1,2,3,4,"
+	list := strings.Split(str, "")
+	list11 := strings.Split(str, ";")
+
+	list2 := strings.Split(str1, ",")
+	fmt.Println(list)
+	fmt.Println(len(list))
+	fmt.Println(list11)
+	for i := range list2 {
+		fmt.Println(i, list2[i])
+	}
+
+	waet := ""
+
+	fmt.Println(strings.LastIndex(waet, "C"))
+	fmt.Println(strings.Index(waet, "C"))
+
 }
