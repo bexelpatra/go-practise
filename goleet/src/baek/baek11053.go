@@ -50,6 +50,7 @@ func Baek11053() {
 	dfs11053(dp, list, 0, 1, list[0])
 
 	fmt.Println(dp)
+	fmt.Println(dp[n-1])
 }
 
 func nextInt11053(r *bufio.Scanner) int {
@@ -90,15 +91,19 @@ func topDown11053(dp []int, list []int, n int) int {
 	return dp[n]
 }
 
+// 시간 초과로 실패한다.
 func dfs11053(dp []int, list []int, idx, count, standard int) {
+	if idx > len(list)-1 {
+		return
+	}
 	if idx == len(list)-1 {
-		dp[idx] = max11053(dp[idx], count)
+		dp[idx] = max11053(dp[idx], count+1)
 		return
 	}
 	if list[idx] > standard {
 		dfs11053(dp, list, idx+1, count+1, list[idx])
 	} else {
-		dfs11053(dp, list, idx+1, count+1, standard)
+		dfs11053(dp, list, idx+1, count, standard)
 		dfs11053(dp, list, idx+1, 1, list[idx])
 	}
 

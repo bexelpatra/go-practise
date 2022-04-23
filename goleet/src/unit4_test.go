@@ -211,7 +211,7 @@ func Test_PointingList(t *testing.T) {
 }
 
 func Test_PrintFormat(t *testing.T) {
-	a := A{"1", "2", "3", "aaaa"}
+	a := A{"1", "2", "3", "aaaa", 1000}
 	strList := []string{"4", "5", "6", "newAz"}
 	ayo := A{}
 	myA := map[string]interface{}{}
@@ -235,6 +235,7 @@ type A struct {
 	B string
 	C string
 	D string
+	F int64
 }
 
 func Test_SplitStr(t *testing.T) {
@@ -256,4 +257,22 @@ func Test_SplitStr(t *testing.T) {
 	fmt.Println(strings.LastIndex(waet, "C"))
 	fmt.Println(strings.Index(waet, "C"))
 
+}
+
+func Test_Unmarshal(t *testing.T) {
+	var a int64
+	a = 1000
+	b := A{}
+	b.F = 1000
+	fmt.Println(a)
+	fmt.Printf("%#v\n", b)
+
+	str := "100000.00"
+	str2 := "10000000"
+
+	fmt.Println(strings.Contains(str, "."))
+	fmt.Println(strings.Index(str, "."))
+
+	fmt.Println(strings.Contains(str2, "."))
+	fmt.Println(strings.Index(str2, "."))
 }
