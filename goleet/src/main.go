@@ -41,7 +41,11 @@ func main() {
 	// my.Do()
 	// baek.Baek2579()
 	// baek.Baek1003()
-	baek.Baek11053()
+	// baek.Baek11053()
+	// baek.Baek2164()
+	for i := 0; i < 100; i++ {
+		fmt.Println(i+1, " : ", baek.Sol2164_2(i+1))
+	}
 
 }
 

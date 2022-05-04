@@ -276,3 +276,13 @@ func Test_Unmarshal(t *testing.T) {
 	fmt.Println(strings.Contains(str2, "."))
 	fmt.Println(strings.Index(str2, "."))
 }
+
+/*
+
+젠킨스 빌드
+개발에서 패키지
+웹 콘솔에서 채널에 체인코드 업로드
+커밋
+승인
+
+*/
