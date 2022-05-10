@@ -70,4 +70,5 @@ func Sol2164_3(n int) int {
 		first += 1
 
 	}
+	return 0
 }

@@ -10,6 +10,8 @@ import (
 	"strings"
 	"testing"
 	"time"
+
+	"github.com/davecgh/go-spew/spew"
 )
 
 type Sample_1 struct {
@@ -275,6 +277,43 @@ func Test_Unmarshal(t *testing.T) {
 
 	fmt.Println(strings.Contains(str2, "."))
 	fmt.Println(strings.Index(str2, "."))
+}
+
+func Test_Spew(t *testing.T) {
+	expectations := map[string]*TVNameParseResult{
+		"Sleepy.Hollow.S03E01.720p.HDTV.x264-AVS": {
+			Name:        "Sleepy Hollow",
+			CleanedName: "Sleepy Hollow S03E01 720p HDTV x264-AVS",
+			Country:     "",
+			Episode:     "1",
+			Season:      "3",
+			Airdate:     "",
+		},
+		"NBC.Nightly.News.2016.02.17.WEB-DL.x264-2Maverick": {
+			Name:        "NBC Nightly News",
+			CleanedName: "NBC Nightly News 2016 02 17 WEB-DL x264-2Maverick",
+			Country:     "",
+			Episode:     "02/17",
+			Season:      "2016",
+			Airdate:     "2016.02.17",
+		},
+	}
+	for name, v := range expectations {
+		t.Errorf("Diff in Parse output for %s", name)
+		fmt.Println("Expected:")
+		spew.Dump(v, "a")
+		fmt.Println("sdump")
+
+	}
+}
+
+type TVNameParseResult struct {
+	Name        string
+	CleanedName string
+	Country     string
+	Episode     string
+	Season      string
+	Airdate     string
 }
 
 /*
