@@ -46,8 +46,10 @@ func main() {
 	// for i := 0; i < 100; i++ {
 	// 	fmt.Println(i+1, " : ", baek.Sol2164_2(i+1))
 	// }
+	// baek.Baek2293()
+	// baek.Baek2294()
+	baek.Baek1912()
 
-	baek.Baek2293()
 }
 
 func gogo() {

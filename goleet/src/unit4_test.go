@@ -325,3 +325,21 @@ type TVNameParseResult struct {
 승인
 
 */
+
+func Test_mytest(t *testing.T) {
+	bytes := []byte("23")
+	minus := false
+	num := 0
+	for _, b := range bytes {
+		num *= 10
+		if b-'0' > '9' {
+			minus = true
+		} else {
+			num += int(b - '0')
+		}
+	}
+	if minus {
+		num = -num
+	}
+	fmt.Println(num)
+}
