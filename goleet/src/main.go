@@ -48,7 +48,9 @@ func main() {
 	// }
 	// baek.Baek2293()
 	// baek.Baek2294()
-	baek.Baek1912()
+	// baek.Baek1912()
+	// baek.Baek12865()
+	baek.Baek12865_2()
 
 }
 
