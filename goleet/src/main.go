@@ -5,9 +5,11 @@ import (
 	"os"
 
 	"example.go/goleet/baek"
+	"github.com/joho/godotenv"
 )
 
 func main() {
+	godotenv.Load()
 	// baek.Baek2606()
 	// baek.Baek2606_2()
 	// baek.Baek1012()
@@ -50,8 +52,8 @@ func main() {
 	// baek.Baek2294()
 	// baek.Baek1912()
 	// baek.Baek12865()
-	baek.Baek12865_2()
-
+	// baek.Baek12865_2()
+	baek.Baek9251()
 }
 
 func gogo() {

@@ -43,6 +43,8 @@ func Baek12865() {
 	fmt.Println(dp[N][K])
 }
 
+// https://www.acmicpc.net/source/39327946
+// 반복문 여러번 안 돌리고 값을 입력받으면서 바로 dp 작성
 func Baek12865_2() {
 	r := bufio.NewScanner(os.Stdin)
 	r.Split(bufio.ScanWords)
@@ -65,7 +67,6 @@ func Baek12865_2() {
 		}
 	}
 	fmt.Println(dp[K])
-	fmt.Println(dp)
 }
 
 func nextInt12865(r *bufio.Scanner) int {
