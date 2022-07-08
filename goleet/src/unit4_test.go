@@ -343,3 +343,11 @@ func Test_mytest(t *testing.T) {
 	}
 	fmt.Println(num)
 }
+
+func Test_SliceReference(t *testing.T) {
+
+}
+
+func refer(dp *[][]int, a int) {
+	fmt.Println((*dp)[a][0])
+}

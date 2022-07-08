@@ -7,6 +7,9 @@ import (
 )
 
 // st-lab.tistory.com/137 참조
+/*
+	1 3 5 2 3 4 반례
+*/
 func Baek11053() {
 	r := bufio.NewScanner(os.Stdin)
 	r.Split(bufio.ScanWords)
@@ -18,18 +21,18 @@ func Baek11053() {
 	}
 
 	/*
-		//1.  bottom up
-		for i := 0; i < n; i++ {
-			dp[i] = 1
-			for j := 0; j < i; j++ {
-				// fmt.Printf("list[%d] : %d, list[%d] : %d, dp[%d] : %d, dp[%d] : %d \n", i, list[i], j, list[j], i, dp[i], j, dp[j])
-				if list[j] < list[i] && dp[i] < dp[j]+1 {
-					dp[i] = dp[j] + 1
-				}
+	 */
+	//1.  bottom up
+	for i := 0; i < n; i++ {
+		dp[i] = 1
+		for j := 0; j < i; j++ {
+			fmt.Printf("i = %d , j = %d\n", i, j)
+			// fmt.Printf("list[%d] : %d, list[%d] : %d, dp[%d] : %d, dp[%d] : %d \n", i, list[i], j, list[j], i, dp[i], j, dp[j])
+			if list[j] < list[i] && dp[i] < dp[j]+1 {
+				dp[i] = dp[j] + 1
 			}
 		}
-
-	*/
+	}
 
 	// 2. top down
 	/*
@@ -47,7 +50,8 @@ func Baek11053() {
 		}
 	*/
 
-	dfs11053(dp, list, 0, 1, list[0])
+	// 3. dfs 시도중...(현재 오답)
+	// dfs11053(dp, list, 0, 1, list[0])
 
 	fmt.Println(dp)
 	fmt.Println(dp[n-1])
@@ -114,4 +118,32 @@ func max11053(a, b int) int {
 		return b
 	}
 	return a
+}
+func Baek11053_2() {
+	r := bufio.NewScanner(os.Stdin)
+	r.Split(bufio.ScanWords)
+	n := nextInt11053(r)
+	list := make([]int, n)
+	dp := make([]int, n)
+	for i := 0; i < n; i++ {
+		list[i] = nextInt11053(r)
+		dp[i] = 1
+	}
+	for i := 0; i < n-1; i++ {
+		cnt := 1
+		standard := list[i]
+		for j := i + 1; j < n; j++ {
+			if standard < list[j] {
+				cnt += 1
+				standard = list[j]
+				dp[i] = max11053(dp[j], cnt)
+			}
+		}
+	}
+	max := 0
+	for _, val := range dp {
+		max = max11053(val, max)
+	}
+	fmt.Println(dp)
+	fmt.Println(max)
 }

@@ -6,15 +6,6 @@ import (
 	"os"
 )
 
-/*
-6
-10
-20
-15
-25
-10
-20
-*/
 func Baek2579() {
 	r := bufio.NewScanner(os.Stdin)
 	n := scanInt2579(r)
@@ -54,6 +45,22 @@ func Baek2579() {
 	fmt.Println(dp[n])
 }
 
+func Baek2579_2() {
+	r := bufio.NewScanner(os.Stdin)
+	n := scanInt2579(r)
+	stair := make([]int, n+1)
+	dp := make([]int, n+1)
+	for i := 0; i < n; i++ {
+		stair[i] = scanInt2579(r)
+	}
+
+	dp[1] = stair[0]
+	dp[2] = stair[0] + stair[1]
+
+	topDown2579(&dp, n, &stair)
+	fmt.Println(dp[n])
+}
+
 func scanInt2579(r *bufio.Scanner) (num int) {
 	r.Scan()
 	for _, val := range r.Bytes() {
@@ -61,4 +68,17 @@ func scanInt2579(r *bufio.Scanner) (num int) {
 		num += int(val - '0')
 	}
 	return
+}
+
+func topDown2579(dp *[]int, idx int, stair *[]int) int {
+	if (*dp)[idx] == 0 {
+		(*dp)[idx] = max2579((*dp)[idx-2], (*dp)[idx-3]+(*stair)[idx-1]) + (*stair)[idx]
+	}
+	return (*dp)[idx]
+}
+func max2579(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
 }
