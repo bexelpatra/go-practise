@@ -30,7 +30,6 @@ func main() {
 	// baek.Baek2231()
 	// baek.Baek11724()
 	// baek.Baek8958()
-
 	// baek.Baek1152_3()
 	// baek.Baek_Sample_1()
 	// baek.Baek1158_2()
@@ -65,7 +64,7 @@ func main() {
 	// baek.Baek2579()
 	// baek.Baek11053()
 
-	myTest.Monti(100)
+	myTest.Monti(11111, false)
 
 }
 
