@@ -93,3 +93,21 @@ func Test_se(t *testing.T) {
 	s.Remove("a")
 	fmt.Println(s.Contains("a"))
 }
+
+func Test_slislice(t *testing.T) {
+	sli := []int{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
+
+	RmSlice(&sli, 1)
+	fmt.Println(&sli, len(sli))
+	RmSlice(&sli, 2)
+	fmt.Println(&sli, len(sli))
+}
+func RmSlice(s *[]int, i int) {
+	for _, v := range *s {
+		if v == i {
+			(*s)[i] = (*s)[len(*s)-1]
+			(*s) = (*s)[:len(*s)-1]
+			return
+		}
+	}
+}
