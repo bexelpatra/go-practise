@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"example.go/goleet/myTest"
+	"example.go/goleet/baek"
 	"github.com/joho/godotenv"
 )
 
@@ -64,7 +64,10 @@ func main() {
 	// baek.Baek2579()
 	// baek.Baek11053()
 
-	myTest.Monti(11111, false)
+	// baek.Baek1931()
+	baek.Baek1931_2()
+
+	// myTest.Monti(11111, false)
 
 }
 

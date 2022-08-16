@@ -33,3 +33,42 @@ func Baek1931() {
 	}
 	fmt.Println(answer)
 }
+
+func Baek1931_2() {
+	r := bufio.NewScanner(os.Stdin)
+	r.Split(bufio.ScanWords)
+	n := scanInt1931(r)
+
+	answer := 0
+	meatings := make([][2]int, n)
+	for i := 0; i < n; i++ {
+		meatings[i][0], meatings[i][1] = scanInt1931(r), scanInt1931(r)
+	}
+
+	sort.Slice(meatings, func(i, j int) bool {
+		if meatings[i][1] == meatings[j][1] {
+			return meatings[i][0] < meatings[j][0]
+		}
+		return meatings[i][1] < meatings[j][1]
+	})
+
+	fmt.Println(meatings)
+	now := 0
+	for _, meating := range meatings {
+		if meating[0] > now {
+			now = meating[1]
+			answer += 1
+		}
+	}
+	fmt.Println(answer)
+}
+
+func scanInt1931(r *bufio.Scanner) int {
+	result := 0
+	r.Scan()
+	for _, val := range r.Bytes() {
+		result *= 10
+		result += int(val - '0')
+	}
+	return result
+}
