@@ -2,6 +2,18 @@
 	"folders": [
 		{
 			"path": "."
+		},
+		{
+			"path": "..\\chainGo"
+		},
+		{
+			"path": "..\\first_go"
+		},
+		{
+			"path": "..\\POS"
+		},
+		{
+			"path": "..\\Cyob"
 		}
 	],
 	"settings": {}
