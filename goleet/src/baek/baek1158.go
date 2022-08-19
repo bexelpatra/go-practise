@@ -46,6 +46,20 @@ func Baek1158() {
 }
 
 func Baek1158_2() {
+	// r := bufio.NewReader(os.Stdin)
+	// w := bufio.NewWriter(os.Stdout)
+	// defer w.Flush()
+	// var n, k int
+	// fmt.Fscanln(r, &n, &k)
+	// circle := make([]int, n)
+	// answer := make([]int, 0)
+	// for i := 0; i < n; i++ {
+	// 	circle[i] = i + 1
+	// }
+
+}
+
+func Baek1158_3() {
 	r := bufio.NewReader(os.Stdin)
 	w := bufio.NewWriter(os.Stdout)
 	defer w.Flush()
