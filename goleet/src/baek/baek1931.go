@@ -41,10 +41,15 @@ func Baek1931_2() {
 
 	answer := 0
 	meatings := make([][2]int, n)
-	for i := 0; i < n; i++ {
-		meatings[i][0], meatings[i][1] = scanInt1931(r), scanInt1931(r)
-	}
 
+	// for index, _ := range meatings {
+	// 	// 1. call by value 인 경우 indexing 해서 객체를 slice를 가져와야 한다.
+	// 	meating := &meatings[index]
+	// 	meating[0], meating[1] = scanInt1931(r), scanInt1931(r)
+
+	// 	// 2. call by refence 인 경우 값을 그대로 넣어주면 meatings에 값이 들어가 있어야 한다.
+	// 	// value[0],value[1] = scanInt1931(r), scanInt1931(r)
+	// }
 	sort.Slice(meatings, func(i, j int) bool {
 		if meatings[i][1] == meatings[j][1] {
 			return meatings[i][0] < meatings[j][0]
