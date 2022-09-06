@@ -1,0 +1,27 @@
+{
+    "folders": [
+		{
+			"path": "../../../../webGo/webByGoLang"
+		},
+		{
+			"path": "../../../../webGo/blockchainInGo"
+		},
+		{
+			"path": "../../.."
+		}
+	],
+    "settings": {},
+    "launch": {
+        "version": "0.2.0",
+        "configurations": [
+            {
+                "name": "Launch Package",
+                "type": "go",
+                "request": "launch",
+                "mode": "auto",
+                "program": "${fileDirname}",
+                "console": "integratedTerminal"
+            }
+        ]
+    }
+}
