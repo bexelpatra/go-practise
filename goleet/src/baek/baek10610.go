@@ -4,8 +4,6 @@ import (
 	"bufio"
 	"fmt"
 	"os"
-	"sort"
-	"strings"
 )
 
 func Baek10610() {
@@ -22,25 +20,9 @@ func Baek10610() {
 	if(stop){
 		fmt.Println(-1)
 		return
-	}
-	sort.Slice(numbers,func(i, j int) bool {return i>j})
-	var s s
-	s = strings.Split("1238740","")
-	
-	
-	sort.Slice(s, func(i, j int) bool {
-		return s[i]>s[j]
-	})
-	
-	fmt.Println(s)
-	sort.Sort(s)
-	fmt.Println(s)
+	}	
 	
 }
-type s []string
-func (s s) Len() int           { return len(s) }
-func (s s) Less(i, j int) bool { return s[i] > s[j] }
-func (s s) Swap(i, j int)      { s[i], s[j] = s[j], s[i] }
 
 func scanInt10610(r *bufio.Scanner) ([]int){
 	r.Scan()
