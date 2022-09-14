@@ -111,3 +111,24 @@ func RmSlice(s *[]int, i int) {
 		}
 	}
 }
+
+func Test_string(t *testing.T) {
+
+	fmt.Println(string('2' - '0'))
+	fmt.Println(string(50 - '0'))
+	fmt.Println(string('0'))
+	fmt.Println(int('0'))
+	fmt.Println(int('1'))
+	fmt.Println(int('2'))
+	fmt.Println(int('3'))
+	fmt.Println(int('4'))
+	fmt.Println(int('5'))
+	fmt.Println(int('6'))
+	fmt.Println(int('7'))
+	fmt.Println(int('8'))
+	fmt.Println(string([]byte{48}))
+
+	dst := make([]byte, 0)
+	strconv.AppendInt(dst, 1, 1)
+	fmt.Println(string(dst))
+}

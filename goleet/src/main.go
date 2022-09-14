@@ -69,8 +69,12 @@ func main() {
 	// baek.Baek10162()/
 	// baek.Baek13305()
 	// baek.Baek1789()
-	baek.Baek10610()
+	// baek.Baek10610()
+	// baek.Baek10610_2()
+	// baek.Baek10610_test()
 	// myTest.Monti(11111, false)
+
+	baek.Baek1946()
 
 }
 
