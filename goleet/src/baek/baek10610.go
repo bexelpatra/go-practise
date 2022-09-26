@@ -6,8 +6,6 @@ import (
 	"fmt"
 	"os"
 	"sort"
-
-	// "sort"
 	"strings"
 )
 
@@ -144,13 +142,13 @@ func scanString10610_2(r *bufio.Scanner) []int64 {
 func Baek10610_test() {
 	r := bufio.NewScanner(os.Stdin)
 	var by []byte
-	
-	r.Buffer(by,10000000)
+
+	r.Buffer(by, 10000000)
 	r.Scan()
 	numbers := make([]int, 10)
 	sum := 0
 	for i, v := range by {
-		if i % 60000== 3 {
+		if i%60000 == 3 {
 			r.Scan()
 		}
 		fmt.Println(v - '0')
