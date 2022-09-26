@@ -38,9 +38,9 @@ func Baek10610() {
 
 }
 
-func Baek10610_2() {
+func Baek10610_21() {
 	r := bufio.NewScanner(os.Stdin)
-	numbers := scanString10610_2(r)
+	numbers := scanString10610_21(r)
 	var buf bytes.Buffer
 
 	if numbers[0] == 0 {
@@ -128,7 +128,7 @@ func scanString10610(r *bufio.Scanner) ([]string, error) {
 	return numbers, nil
 }
 
-func scanString10610_2(r *bufio.Scanner) []int64 {
+func scanString10610_21(r *bufio.Scanner) []int64 {
 	result := make([]int64, 10)
 	r.Scan()
 
