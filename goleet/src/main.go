@@ -9,6 +9,7 @@ import (
 )
 
 func main() {
+	//접기: ctrl + shift + [ 
 	godotenv.Load()
 	// baek.Baek2606()
 	// baek.Baek2606_2()

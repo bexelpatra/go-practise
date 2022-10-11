@@ -36,6 +36,7 @@ func scanString10610_2(r *bufio.Scanner) ([]int64,error ){
 	r.Scan()
 	var sum int
 	sum=0
+	fmt.Println(r.Bytes())
 	for _, v := range r.Bytes() {
 		result[(v-'0')] += 1
 		sum+=(int)(v-'0')

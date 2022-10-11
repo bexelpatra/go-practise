@@ -1,15 +1,24 @@
 {
     "folders": [
-		{
-			"path": "../../../../webGo/webByGoLang"
-		},
-		{
-			"path": "../../../../webGo/blockchainInGo"
-		},
-		{
-			"path": "../../.."
-		}
-	],
+        {
+            "path": "../../../../webGo/webByGoLang"
+        },
+        {
+            "path": "../../../../webGo/blockchainInGo"
+        },
+        {
+            "path": "../../.."
+        },
+        {
+            "path": "C:/Users/sobfy/Desktop/hyperledger/fabric-samples-main/token-erc-20"
+        },
+        {
+            "path": "C:/Users/sobfy/Desktop/hyperledger/fabric-samples-main/token-erc-721"
+        },
+        {
+            "path": "C:/Users/sobfy/Desktop/hyperledger/fabric-samples-main/token-erc-1155"
+        }
+    ],
     "settings": {},
     "launch": {
         "version": "0.2.0",
