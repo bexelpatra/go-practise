@@ -35,11 +35,6 @@ func Baek2264() {
 
 	result := 0
 	for i := 0; i < n; i++ {
-		fmt.Println(q)
-		if len(q) == 0 {
-			fmt.Println(-1)
-			return
-		}
 		tempQ := q[0]
 		q = q[1:]
 		result += 1
