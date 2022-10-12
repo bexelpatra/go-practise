@@ -34,6 +34,7 @@ func Baek7568() {
 	now := 1
 	plus := 0
 	answer[people[0][2]] = 1
+
 	for i := 0; i < n-1; i++ {
 		j := i + 1
 		now += 1
