@@ -355,16 +355,25 @@ func refer(dp *[][]int, a int) {
 
 func Test_stringIndexing(t *testing.T){
 	// 1. 문자열 더하기? 
-	fmt.Println("123"+"456")
+	// fmt.Println("123"+"456")
 
-	s:=strings.TrimRight("1234   "," ")
-	fmt.Println(s , len(s))
+	// s:=strings.TrimRight("1234   "," ")
+	// fmt.Println(s , len(s))
 
-	s2:= strings.Builder{}
-	s2.WriteByte(byte('3'))
-	s2.Write([]byte("123"))
+	// s2:= strings.Builder{}
+	// s2.WriteByte(byte('3'))
+	// s2.Write([]byte("123"))
 	
-	fmt.Println(s2.String())
+	// fmt.Println(s2.String())
+
+	build := bytes.Buffer{}
+	ra := 1234
+	build.WriteByte((byte)(ra-'0'))
+	build.WriteByte((byte)(ra+'0'))
+	build.WriteByte((byte)(' '))
+	build.WriteByte(' ')
+
+	fmt.Println(build.String())
 }
 
 func TestString(t *testing.T) {
@@ -381,7 +390,9 @@ func TestString(t *testing.T) {
   b.WriteString("a")
   b.WriteString("i")
   b.WriteString("n")
-  fmt.Println(b.String())
+  bTemp := b.String()
+  fmt.Println(bTemp)
+  fmt.Println(bTemp[0:len(bTemp)-1])
   // 3.
   str = fmt.Sprintf("%s%s", str1, str2)
   fmt.Println(str)
