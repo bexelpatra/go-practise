@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bytes"
 	"encoding/json"
 	"fmt"
 	"log"
@@ -350,4 +351,47 @@ func Test_SliceReference(t *testing.T) {
 
 func refer(dp *[][]int, a int) {
 	fmt.Println((*dp)[a][0])
+}
+
+func Test_stringIndexing(t *testing.T){
+	// 1. 문자열 더하기? 
+	fmt.Println("123"+"456")
+
+	s:=strings.TrimRight("1234   "," ")
+	fmt.Println(s , len(s))
+
+	s2:= strings.Builder{}
+	s2.WriteByte(byte('3'))
+	s2.Write([]byte("123"))
+	
+	fmt.Println(s2.String())
+}
+
+func TestString(t *testing.T) {
+// 1.
+  str1 := "Welcome "
+  str2 := "Rain!"
+  str := str1 + str2
+  fmt.Println(str)
+  str = str1 + "my " + str2
+  fmt.Println(str)
+  // 2.
+  var b bytes.Buffer
+  b.WriteString("R")
+  b.WriteString("a")
+  b.WriteString("i")
+  b.WriteString("n")
+  fmt.Println(b.String())
+  // 3.
+  str = fmt.Sprintf("%s%s", str1, str2)
+  fmt.Println(str)
+  // 4.
+  str = ""
+  str += str1
+  str += str2
+  fmt.Println(str)
+  // 5.
+  mySlice := []string{"Welcome", "my", "Rain!"}
+  str = strings.Join(mySlice, " * ")
+  fmt.Println(str)
 }

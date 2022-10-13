@@ -75,9 +75,9 @@ func main() {
 	// baek.Baek10610_test()
 	// myTest.Monti(11111, false)
 	// baek.Baek1946()
-	// baek.Baek7568()
-
-		baek.Baek2264()
+	// baek.Baek2264()
+	
+	baek.Baek7568()
 }
 
 func gogo() {
