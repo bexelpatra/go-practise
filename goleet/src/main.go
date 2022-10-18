@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	//접기: ctrl + shift + [ 
+	//접기: ctrl + shift + [
 	godotenv.Load()
 	// baek.Baek2606()
 	// baek.Baek2606_2()
@@ -76,12 +76,13 @@ func main() {
 	// myTest.Monti(11111, false)
 	// baek.Baek1946()
 	// baek.Baek2264()
-	
+
 	// baek.Baek7568()
 	// baek.Baek7568_2()
 	// baek.Baek7568_3()
 	// baek.Baek22173()
-	baek.Baek14502()
+	// baek.Baek14502()
+	baek.Baek1753()
 
 }
 
