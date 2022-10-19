@@ -84,12 +84,6 @@ func spreadVirus(graph [][]int, check [][]bool, virus [][2]int)int{
 	for _, v := range virus {
 		recursive14502(tempGraph,check,v[0],v[1])
 	}
-	// for _, v := range tempGraph {
-	// 	fmt.Println(v)
-	// }
-	// for _, v := range graph {
-	// 	fmt.Println(v)
-	// }
 	num = countZero14502(tempGraph)
 	return num
 }
