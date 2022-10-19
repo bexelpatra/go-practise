@@ -64,7 +64,6 @@ func main() {
 	// baek.Baek1149()
 	// baek.Baek2579()
 	// baek.Baek11053()
-
 	// baek.Baek1931()
 	// baek.Baek1931_2()/
 	// baek.Baek10162()/
@@ -82,7 +81,10 @@ func main() {
 	// baek.Baek7568_3()
 	// baek.Baek22173()
 	// baek.Baek14502()
-	baek.Baek1753()
+	// baek.Baek1753()
+
+	// baek.Baek1753_2()
+	baek.Baek1753_3()
 
 }
 

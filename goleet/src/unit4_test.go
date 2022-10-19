@@ -353,8 +353,8 @@ func refer(dp *[][]int, a int) {
 	fmt.Println((*dp)[a][0])
 }
 
-func Test_stringIndexing(t *testing.T){
-	// 1. 문자열 더하기? 
+func Test_stringIndexing(t *testing.T) {
+	// 1. 문자열 더하기?
 	// fmt.Println("123"+"456")
 
 	// s:=strings.TrimRight("1234   "," ")
@@ -363,13 +363,13 @@ func Test_stringIndexing(t *testing.T){
 	// s2:= strings.Builder{}
 	// s2.WriteByte(byte('3'))
 	// s2.Write([]byte("123"))
-	
+
 	// fmt.Println(s2.String())
 
 	build := bytes.Buffer{}
 	ra := 1234
-	build.WriteByte((byte)(ra-'0'))
-	build.WriteByte((byte)(ra+'0'))
+	build.WriteByte((byte)(ra - '0'))
+	build.WriteByte((byte)(ra + '0'))
 	build.WriteByte((byte)(' '))
 	build.WriteByte(' ')
 
@@ -377,32 +377,76 @@ func Test_stringIndexing(t *testing.T){
 }
 
 func TestString(t *testing.T) {
-// 1.
-  str1 := "Welcome "
-  str2 := "Rain!"
-  str := str1 + str2
-  fmt.Println(str)
-  str = str1 + "my " + str2
-  fmt.Println(str)
-  // 2.
-  var b bytes.Buffer
-  b.WriteString("R")
-  b.WriteString("a")
-  b.WriteString("i")
-  b.WriteString("n")
-  bTemp := b.String()
-  fmt.Println(bTemp)
-  fmt.Println(bTemp[0:len(bTemp)-1])
-  // 3.
-  str = fmt.Sprintf("%s%s", str1, str2)
-  fmt.Println(str)
-  // 4.
-  str = ""
-  str += str1
-  str += str2
-  fmt.Println(str)
-  // 5.
-  mySlice := []string{"Welcome", "my", "Rain!"}
-  str = strings.Join(mySlice, " * ")
-  fmt.Println(str)
+	// 1.
+	str1 := "Welcome "
+	str2 := "Rain!"
+	str := str1 + str2
+	fmt.Println(str)
+	str = str1 + "my " + str2
+	fmt.Println(str)
+	// 2.
+	var b bytes.Buffer
+	b.WriteString("R")
+	b.WriteString("a")
+	b.WriteString("i")
+	b.WriteString("n")
+	bTemp := b.String()
+	fmt.Println(bTemp)
+	fmt.Println(bTemp[0 : len(bTemp)-1])
+	// 3.
+	str = fmt.Sprintf("%s%s", str1, str2)
+	fmt.Println(str)
+	// 4.
+	str = ""
+	str += str1
+	str += str2
+	fmt.Println(str)
+	// 5.
+	mySlice := []string{"Welcome", "my", "Rain!"}
+	str = strings.Join(mySlice, " * ")
+	fmt.Println(str)
+}
+
+type Ver struct {
+	a int
+	b int
+}
+
+func TestStructDefaultValue(t *testing.T) {
+
+	vs := make([][]Ver, 3)
+	fmt.Println("c8 왜ㅔ 암것도 안나움?")
+	for _, v := range vs {
+		fmt.Println(v)
+	}
+
+	m2 := make(map[int]map[int]int, 0)
+	m3 := make(map[int]map[int]interface{}, 0)
+
+	if m2[1] == nil {
+		m2[1] = map[int]int{}
+		m2[1][2] = 3
+		m2[1][3] = 4
+		m2[1][6] = 7
+	}
+	m3[1] = map[int]interface{}{}
+	fmt.Println(m2[1][4])
+	fmt.Println(m3[1][2] == struct{}{})
+	fmt.Println(m3[1][2] == nil)
+	fmt.Println(m3[2][2])
+	fmt.Println(m2)
+}
+
+func TestMap(t *testing.T) {
+	m2 := make(map[int]map[int]int, 0)
+	m2[1] = map[int]int{}
+	m2[1][2] = 3
+	m2[1][3] = 4
+	m2[1][6] = 7
+
+	m2[2] = map[int]int{}
+
+	for key, v := range m2 {
+		fmt.Println(key, "   ", v)
+	}
 }
