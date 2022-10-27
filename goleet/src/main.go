@@ -86,8 +86,9 @@ func main() {
 	// baek.Baek1753_2()
 	// baek.Baek1753_3()
 	
-	baek.Baek4963()
+	// baek.Baek4963()
 
+	baek.Hanoi()
 }
 
 func gogo() {
