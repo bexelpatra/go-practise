@@ -13,8 +13,8 @@ func Baek4963() {
 	r.Split(bufio.ScanWords)
 	result := bytes.Buffer{}
 	for {
-		w:= scanInt4963(r)
 		h:= scanInt4963(r)
+		w:= scanInt4963(r)
 		if w==0 && h ==0{
 			break
 		}
@@ -35,7 +35,6 @@ func Baek4963() {
 			for j := range graphs[i] {
 				if recursive4963(&graphs,&checked,w,h,i,j){
 					count+=1
-					fmt.Println("\t\t ",i,j)
 				}
 			}
 		}
