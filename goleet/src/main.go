@@ -88,7 +88,8 @@ func main() {
 	
 	// baek.Hanoi()
 	// baek.Baek14681()
-	baek.Baek4963()
+	// baek.Baek4963()
+	baek.Baek2775()
 
 
 }
