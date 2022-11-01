@@ -85,15 +85,16 @@ func main() {
 
 	// baek.Baek1753_2()
 	// baek.Baek1753_3()
-	
 	// baek.Hanoi()
 	// baek.Baek14681()
 	// baek.Baek4963()
 	// baek.Baek2775()
-	
 	// baek.Baek10809()
-	baek.Baek2675()
+	// baek.Baek2675()
+	// baek.Baek4963()
+	// baek.Baek2042()
 
+	baek.Baek6549()
 }
 
 func gogo() {
