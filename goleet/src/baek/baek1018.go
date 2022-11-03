@@ -1,7 +1,11 @@
 package baek
 
 import (
+	"bufio"
 	"fmt"
+	"os"
+	"strconv"
+	"strings"
 )
 
 var (
@@ -9,12 +13,12 @@ var (
 )
 
 func Baek1018() {
-	// r := bufio.NewScanner(os.Stdin)
-	// r.Scan()
-	// xy := strings.Split(r.Text(), " ")
-	// y, _ := strconv.Atoi(xy[0])
-	// x, _ := strconv.Atoi(xy[1])
-	// chass := make([][]string, y)
+	r := bufio.NewScanner(os.Stdin)
+	r.Scan()
+	xy := strings.Split(r.Text(), " ")
+	y, _ := strconv.Atoi(xy[0])
+	x, _ := strconv.Atoi(xy[1])
+	chass := make([][]string, y)
 	board = make([][]string, 8)
 	for i := 0; i < 8; i++ {
 		board[i] = make([]string, 8)
@@ -37,20 +41,17 @@ func Baek1018() {
 		}
 	}
 
-	for _, v := range board {
-		fmt.Println(v)
+	for i := 0; i < y; i++ {
+		r.Scan()
+		chass[i] = strings.Split(r.Text(), "")
 	}
-
-	// for i := 0; i < y; i++ {
-	// 	r.Scan()
-	// 	chass[i] = strings.Split(r.Text(), "")
-	// }
-
-	// for i := 0; i <= x-8; i++ {
-	// 	for j := 0; j <= y-8; j++ {
-	// 		check1018(&chass, i, j)
-	// 	}
-	// }
+	num := 1251
+	for i := 0; i < y-8+1; i++ {
+		for j := 0; j < x-8+1; j++ {
+			num = min1018(check1018_2(&chass, i, j), num)
+		}
+	}
+	fmt.Println(num)
 }
 
 func check1018(chess *[][]string, x, y int) int {
@@ -91,4 +92,28 @@ func check1018(chess *[][]string, x, y int) int {
 	}
 	fmt.Println(count)
 	return min
+}
+
+func check1018_2(chass *[][]string, x, y int) int {
+	a := 0
+	b := 0
+	for i := x; i < x+8; i++ {
+		for j := y; j < y+8; j++ {
+			if (*chass)[i][j] != board[i-x][j-y] {
+				a += 1
+			}
+			if (*chass)[i][j] == board[i-x][j-y] {
+				b += 1
+			}
+		}
+	}
+
+	return min1018(a, b)
+}
+
+func min1018(m, n int) int {
+	if m > n {
+		return n
+	}
+	return m
 }
