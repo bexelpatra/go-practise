@@ -450,3 +450,16 @@ func TestMap(t *testing.T) {
 		fmt.Println(key, "   ", v)
 	}
 }
+
+func TestSliceDouble(t *testing.T) {
+	s := make([][]int, 0)
+	s = append(s, []int{1, 2, 3})
+	fmt.Println(s)
+	if s[1] == nil {
+		s[1] = make([]int, 0)
+	}
+	s[1] = append(s[1], 1)
+	fmt.Println(s)
+	s[1] = append(s[1], 1)
+	fmt.Println(s)
+}

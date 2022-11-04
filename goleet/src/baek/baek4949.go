@@ -19,24 +19,24 @@ func Baek4949() {
 			break
 		}
 		flag := false
-		for _, v := range bytes {
-			if v == '[' {
+		for idx := range bytes {
+			if bytes[idx] == '[' {
 				s = append(s, 1)
-			} else if v == '{' {
+			} else if bytes[idx] == '{' {
 				s = append(s, 2)
-			} else if v == '(' {
+			} else if bytes[idx] == '(' {
 				s = append(s, 3)
-			} else if v == ']' {
+			} else if bytes[idx] == ']' {
 				if pop4949(&s)-1 != 0 {
 					flag = true
 					break
 				}
-			} else if v == '}' {
+			} else if bytes[idx] == '}' {
 				if pop4949(&s)-2 != 0 {
 					flag = true
 					break
 				}
-			} else if v == ')' {
+			} else if bytes[idx] == ')' {
 				if pop4949(&s)-3 != 0 {
 					flag = true
 					break

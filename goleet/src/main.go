@@ -99,7 +99,8 @@ func main() {
 	// baek.Baek1018()
 	// baek.Baek1436()
 	// baek.Baek1874()
-	baek.Baek4949()
+	// baek.Baek4949()
+	baek.Baek10799()
 	// for {
 
 	// }
