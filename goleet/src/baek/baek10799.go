@@ -9,11 +9,12 @@ import (
 func Baek10799() {
 	r := bufio.NewScanner(os.Stdin)
 	r.Scan()
-	s := make([]byte, 0)
+
 	bytes := r.Bytes()
-	stick := make([][]int, len(bytes)/2)
+	stick := make([][]int, len(bytes)*2)
 	stick[0] = make([]int, 0)
 	layer := 0
+	beforeLayer := 0
 	for idx, v := range bytes {
 		if v == '(' {
 			layer += 1
@@ -24,29 +25,32 @@ func Baek10799() {
 					stick[i] = make([]int, 1)
 				}
 			}
-			if bytes[idx-1] == ')' {
-				// layer -= 1
-				addLine10799(&stick, layer)
+			if bytes[idx-1] == '(' {
+				add10799(&stick, layer)
+			} else {
+				if beforeLayer > layer {
+					addLine10799(&stick, layer)
+				}
 			}
-			add10799(&stick, layer)
 		}
+		beforeLayer = layer
 	}
-
+	result := 0
 	for _, v := range stick {
 		fmt.Println(v)
+		for _, v2 := range v {
+			if v2 != 0 {
+				result += (v2 + 1)
+			}
+		}
 	}
-	fmt.Println(s)
+	fmt.Println(result)
 }
 
-func pop10799(s *[]byte) bool {
-	temp := (*s)[len(*s)-1]
-	*s = (*s)[:len(*s)-1]
-	return temp == '('
-}
 func addLine10799(stick *[][]int, layer int) {
 	for i := layer + 1; i < len(*stick); i++ {
 		if (*stick)[i] != nil {
-			(*stick)[i] = append((*stick)[i], 1)
+			(*stick)[i] = append((*stick)[i], 0)
 		}
 
 	}

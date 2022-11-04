@@ -100,10 +100,9 @@ func main() {
 	// baek.Baek1436()
 	// baek.Baek1874()
 	// baek.Baek4949()
-	baek.Baek10799()
-	// for {
-
-	// }
+	for {
+		baek.Baek10799()
+	}
 }
 
 func gogo() {
