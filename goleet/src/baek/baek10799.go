@@ -63,3 +63,58 @@ func add10799(stick *[][]int, layer int) {
 		}
 	}
 }
+
+func Baek10799_2() {
+	r := bufio.NewScanner(os.Stdin)
+	r.Buffer(make([]byte, 100100), 100100)
+	r.Scan()
+
+	text := r.Text()
+	result := 0
+	stack := make([]rune, 0)
+	prev := ' '
+	for _, v := range text {
+		if v == '(' {
+			stack = append(stack, v)
+		} else {
+			stack = stack[:len(stack)-1]
+			if prev == '(' {
+				result += len(stack)
+			} else {
+				result += 1
+			}
+		}
+		prev = v
+	}
+
+	fmt.Println(result)
+}
+func Baek10799_3() {
+	r := bufio.NewScanner(os.Stdin)
+	r.Scan()
+
+	layer := 0
+	result := 0
+
+	text := r.Text()
+	prev := ' '
+
+	for _, v := range text {
+		if v == '(' {
+			layer += 1
+		} else {
+			layer -= 1
+			if prev == '(' {
+				result += layer
+			} else {
+				result += 1
+			}
+		}
+		prev = v
+	}
+
+	fmt.Println(result)
+}
+func Baek10799_4() {
+
+}

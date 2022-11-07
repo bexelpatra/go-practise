@@ -3,8 +3,11 @@ package main
 import (
 	"fmt"
 	"os"
+	"reflect"
 
-	"example.go/goleet/baek"
+	// "example.go/goleet/baek"
+
+	"example.go/goleet/baek2"
 	"github.com/joho/godotenv"
 )
 
@@ -100,11 +103,20 @@ func main() {
 	// baek.Baek1436()
 	// baek.Baek1874()
 	// baek.Baek4949()
+	// baek.Baek10799_2()
+	// baek.Baek10799_3()
 	for {
-		baek.Baek10799()
+		baek2.Baek1406()
 	}
 }
 
+func Test() {
+	str := "1234"
+	str = str[:2] + str[2+1:]
+
+	fmt.Println(str)
+	fmt.Println(reflect.TypeOf(str[0]))
+}
 func gogo() {
 	defer func() {
 		r := recover()
