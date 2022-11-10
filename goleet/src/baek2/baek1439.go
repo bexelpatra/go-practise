@@ -30,7 +30,7 @@ func Baek1439() {
 				}else{
 					one+=1
 				}
-			}
+		}
 	}
 	fmt.Println(func(a,b int)int{
 		if a<b{
