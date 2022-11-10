@@ -114,7 +114,8 @@ func main() {
 		// baek2.Baek1439()
 		// baek2.Baek16953()
 		// baek2.Baek1399()
-		baek2.Baek4796()
+		// baek2.Baek4796()
+		baek2.Baek1011()
 
 	}
 }
