@@ -105,6 +105,7 @@ func main() {
 	// baek.Baek4949()
 	// baek.Baek10799_2()
 	// baek.Baek10799_3()
+	// myTest.GoClosure()
 	for {
 		// baek2.Baek1406()
 		// baek.Baek1717_2()
@@ -118,7 +119,8 @@ func main() {
 		// baek2.Baek1011()
 		// baek2.Baek1202_3()
 		// baek2.Baek1049()
-		baek2.Baek1744()
+		// baek2.Baek1744()
+		baek2.Baek17298()
 
 	}
 }
