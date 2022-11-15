@@ -112,7 +112,7 @@ func Baek1202_2(){
 	
  	var result int64
 	var idx int
-	tempArr := PQ1202{}
+	tempArr := PQ11000{}
 	for _, c := range C {
 		for idx < N && jewerlies[idx].M <= c{
 			heap.Push(&tempArr,jewerlies[idx].V)
@@ -148,7 +148,7 @@ func Baek1202_3(){
 	
  	var result int64
 	idx :=0
-	var arr PQ1202
+	var arr PQ11000
 	for i:=0 ;i <m;i++{
 		for idx < n && jewerlies[idx].M <= bag[i]{
 			heap.Push(&arr,-jewerlies[idx].V)
