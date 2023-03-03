@@ -7,13 +7,14 @@ import (
 
 	// "example.go/goleet/baek"
 
-	"example.go/goleet/baek2"
 	"github.com/joho/godotenv"
 )
 
 func main() {
 	//접기: ctrl + shift + [
-	godotenv.Load()
+	godotenv.Load(".env", ".env2")
+
+	fmt.Println(os.Getenv("SAYMYNAME"))
 	// baek.Baek2606()
 	// baek.Baek2606_2()
 	// baek.Baek1012()
@@ -103,30 +104,29 @@ func main() {
 	// baek.Baek10799_2()
 	// baek.Baek10799_3()
 	// myTest.GoClosure()
-	for {
-		// baek2.Baek1406()
-		// baek.Baek1717_2()
-		// baek2.Baek1038()
-		// baek2.Baek1038_2()
-		// baek2.Baek1715()/
-		// baek2.Baek1439()
-		// baek2.Baek16953()
-		// baek2.Baek1399()
-		// baek2.Baek4796()
-		// baek2.Baek1011()
-		// baek2.Baek1202_3()
-		// baek2.Baek1049()
-		// baek2.Baek1744()
-		// baek2.Baek17298()
-		// baek2.Baek2864()
-		// baek2.Baek1449()
-		// baek2.Baek1080()
-		// test2()
-		// baek2.Baek11000()
-		// baek2.Baek15649()
-		baek2.Baek2437_3()
-
-	}
+	// for {
+	// baek2.Baek1406()
+	// baek.Baek1717_2()
+	// baek2.Baek1038()
+	// baek2.Baek1038_2()
+	// baek2.Baek1715()/
+	// baek2.Baek1439()
+	// baek2.Baek16953()
+	// baek2.Baek1399()
+	// baek2.Baek4796()
+	// baek2.Baek1011()
+	// baek2.Baek1202_3()
+	// baek2.Baek1049()
+	// baek2.Baek1744()
+	// baek2.Baek17298()
+	// baek2.Baek2864()
+	// baek2.Baek1449()
+	// baek2.Baek1080()
+	// test2()
+	// baek2.Baek11000()
+	// baek2.Baek15649()
+	// baek2.Baek2437_3()
+	// }
 }
 
 func Test() {

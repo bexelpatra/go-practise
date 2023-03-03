@@ -10,11 +10,11 @@ func Test_main(t *testing.T) {
 	r1 := 3
 	temp1 := make([]int, r1)
 	perm_unduplicapable(&list, &temp1, 3, 0, 0)
-
+	// fmt.Println(temp1)
 	r2 := 3
 	temp2 := make([]int, r2)
 	perm_duplicapable(&list, &temp2, 3, 0, 0)
-
+	// fmt.Println(temp2)
 }
 func perm_unduplicapable(list *[]int, temp *[]int, n, current, start int) {
 	if n == current {
